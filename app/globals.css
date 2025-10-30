@@ -3,14 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --olive-50: #eef0e4;
+  --olive-100: #e4e7d2;
+  --olive-200: #d9dec1;
+  --olive-600: #6a7456;
+  --olive-700: #566044;
+  --olive-800: #3d4430;
+  --olive-900: #2b2e1f;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Tailwind v4 already maps CSS vars; removing @theme keeps linters happy */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,5 +24,71 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Custom utilities for this page (without @apply to please linters) */
+.btn-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  border-color: #c8cfb3;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--olive-800);
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+.btn-chip:hover {
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(86, 96, 68, 0.12);
+  transform: translateY(-1px);
+}
+.btn-chip:focus-visible {
+  outline: 2px solid rgba(86, 96, 68, 0.35);
+  outline-offset: 2px;
+}
+
+.profile-frame {
+  aspect-ratio: var(--profile-aspect, 1 / 1);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  border-width: 1px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 20px rgba(43, 46, 31, 0.08);
+  overflow: hidden;
+  border-color: #d9dec1;
+  backdrop-filter: blur(6px);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  background-color: #ffffff;
+  box-shadow: 0 16px 30px rgba(43, 46, 31, 0.12);
+}
+.card-media {
+  background: linear-gradient(
+    145deg,
+    rgba(238, 240, 228, 0.9),
+    rgba(213, 218, 188, 0.6)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
 }
