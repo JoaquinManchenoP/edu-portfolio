@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const stats = [
   { label: "Years in data", value: "10+" },
@@ -76,35 +75,21 @@ export default function Home() {
                 View projects
               </a>
               <a
-                href="mailto:kenneth.reyes@gmail.com"
+                href="mailto:evalencia97wfc@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-[color:var(--olive-900)] px-4 py-2 text-sm font-medium text-[color:var(--olive-50)] transition duration-200 hover:bg-[color:var(--olive-800)]"
               >
                 Contact
               </a>
               <div className="flex gap-2">
-                <a href="#" className="btn-chip">
+                <a
+                  href="https://www.linkedin.com/in/evalencialaso/"
+                  className="btn-chip"
+                >
                   LinkedIn
-                </a>
-                <a href="#" className="btn-chip">
-                  GitHub
                 </a>
               </div>
             </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-xl border border-[#d9dec1] bg-white/80 p-4 shadow-sm"
-                >
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[color:var(--olive-700)]">
-                    {item.label}
-                  </p>
-                  <p className="mt-2 text-lg font-semibold text-[color:var(--olive-900)]">
-                    {item.value}
-                  </p>
-                </div>
-              ))}
-            </div>
+
             <p className="text-xs text-[color:var(--olive-700)]">
               Currently based in Berlin.
             </p>
